@@ -1,0 +1,134 @@
+/* Mobile first design */
+
+body {
+  box-sizing: border-box;
+  font-family: "Poppins", serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+h1 {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+}
+
+h1 span:first-of-type {
+  font-weight: 200;
+}
+
+p:first-of-type {
+  font-weight: 200;
+  margin-bottom: 60px;
+  color: hsl(234, 12%, 34%);
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "supervisor"
+    "team-builder"
+    "karma"
+    "calculator";
+  gap: 1.8rem;
+}
+
+.container div {
+  border-radius: 8px;
+  border-top-width: 5px;
+  border-top-style: solid;
+  box-shadow: 0px 15px 30px -11px hsl(213, 47%, 67%, 50%);
+  text-align: left;
+  padding: 25px;
+}
+
+.supervisor {
+  border-top-color: hsl(180, 62%, 55%);
+  grid-area: supervisor;
+}
+
+.team-builder {
+  border-top-color: hsl(0, 78%, 62%);
+  grid-area: team-builder;
+}
+
+.karma {
+  border-top-color: hsl(34, 97%, 64%);
+  grid-area: karma;
+}
+
+.calculator {
+  border-top-color: hsl(212, 86%, 64%);
+  grid-area: calculator;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 21px;
+  margin-top: 0;
+}
+
+.container div p {
+  font-weight: 200;
+  color: hsl(234, 12%, 34%);
+}
+
+.img {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+img {
+  width: 55px;
+  height: 55px;
+}
+
+/*responsive design*/
+
+@media all and (min-width: 1000px) {
+  body {
+    padding: 0 70px;
+  }
+
+  h1 {
+    font-size: 2.1rem;
+  }
+
+  p:first-of-type {
+    width: 40%;
+  }
+
+  .container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 33px;
+    grid-template-areas:
+      "    .      team-builder      .    "
+      "supervisor team-builder calculator"
+      "supervisor    karma     calculator"
+      "    .         karma          .    ";
+  }
+
+  .container div {
+    padding: 35px;
+  }
+
+  .container div p {
+    width: 80%;
+  }
+
+  img {
+    width: 65px;
+    height: 65px;
+  }
+}
